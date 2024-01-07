@@ -2,23 +2,24 @@ import pyperclip
 import pyautogui
 import keyboard
 import time
+import ipaddress
 
-print("æŒ‰ä¸‹[ä¸Š]é”®ï¼Œäº”ç§’åå°†å¼€å§‹å¼ºåŠ›ç²˜è´´")
+print("°´ÏÂ[ÉÏ]¼ü£¬ÎåÃëºó½«¿ªÊ¼Ç¿Á¦Õ³Ìù")
 
 
 def simulate_keyboard_output(text):
-    lines = text.split('\n')  # æŒ‰è¡Œåˆ†å‰²ä»£ç æ–‡æœ¬
+    lines = text.split('\n')  # °´ĞĞ·Ö¸î´úÂëÎÄ±¾
     for line in lines:
-        stripped_line = line.strip()  # å»é™¤é¦–å°¾ç©ºæ ¼
-        pyautogui.typewrite(stripped_line)  # æ¨¡æ‹Ÿé”®ç›˜è¾“å‡ºå»é™¤ç©ºæ ¼åçš„ä»£ç 
-        pyautogui.press("enter")  # æ¨¡æ‹Ÿé”®ç›˜æŒ‰ä¸‹å›è½¦é”®
-        time.sleep(0.1)  # åœç•™0.1ç§’
+        stripped_line = line.strip()  # È¥³ıÊ×Î²¿Õ¸ñ
+        pyautogui.typewrite(stripped_line)  # Ä£Äâ¼üÅÌÊä³öÈ¥³ı¿Õ¸ñºóµÄ´úÂë
+        pyautogui.press("enter")  # Ä£Äâ¼üÅÌ°´ÏÂ»Ø³µ¼ü
+        time.sleep(0.1)  # Í£Áô0.1Ãë
 
 def on_keypress(event):
-    if event.name == "up":  # æŒ‰ä¸‹ä¸Šé”®
-        print("äº”ç§’åå°†å¼€å§‹å¼ºåŠ›ç²˜è´´")
+    if event.name == "up":  # °´ÏÂÉÏ¼ü
+        print("ÎåÃëºó½«¿ªÊ¼Ç¿Á¦Õ³Ìù")
         print(5)
-        time.sleep(1)  # å€’è®¡æ—¶
+        time.sleep(1)  # µ¹¼ÆÊ±
         print(4)
         time.sleep(1)
         print(3)
@@ -27,13 +28,13 @@ def on_keypress(event):
         time.sleep(1)
         print(1)
         time.sleep(1)
-        print("æ­£åœ¨ç²˜è´´......")
-        clipboard_text = pyperclip.paste()  # è·å–å‰ªè´´æ¿æ–‡æœ¬
-        simulate_keyboard_output(clipboard_text)  # æ¨¡æ‹Ÿé”®ç›˜è¾“å‡ºå‰ªè´´æ¿æ–‡æœ¬
-        print("ç²˜è´´å®Œæˆï¼\n \næŒ‰ä¸‹[ä¸Š]é”®ï¼Œäº”ç§’åå°†å¼€å§‹å¼ºåŠ›ç²˜è´´")
+        print("ÕıÔÚÕ³Ìù......")
+        clipboard_text = pyperclip.paste()  # »ñÈ¡¼ôÌù°åÎÄ±¾
+        simulate_keyboard_output(clipboard_text)  # Ä£Äâ¼üÅÌÊä³ö¼ôÌù°åÎÄ±¾
+        print("Õ³ÌùÍê³É£¡\n \n°´ÏÂ[ÉÏ]¼ü£¬ÎåÃëºó½«¿ªÊ¼Ç¿Á¦Õ³Ìù")
 
-keyboard.on_press(on_keypress)  # ç›‘å¬é”®ç›˜äº‹ä»¶
+keyboard.on_press(on_keypress)  # ¼àÌı¼üÅÌÊÂ¼ş
 
-keyboard.wait()  # æŒç»­ç›‘å¬é”®ç›˜äº‹ä»¶
+keyboard.wait()  # ³ÖĞø¼àÌı¼üÅÌÊÂ¼ş
 
 
